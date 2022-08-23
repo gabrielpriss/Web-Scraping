@@ -16,7 +16,7 @@ def fetch(url):
         return None
     if (req.status_code != 200):
         return None
-    return req.html
+    return req.text
 
 
 # Requisito 2
