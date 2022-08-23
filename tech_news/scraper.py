@@ -6,11 +6,17 @@ import requests
 def fetch(url):
     """Seu código deve vir aqui"""
     time.sleep(1)
-    req = requests.get(url)
-    res = req.status_code
-    if (res == 200):
-        return req.text
-    return None
+    try:
+        req = requests.get(
+            url,
+            headers={"user-agent": "Fake user-agent"},
+            timeout=3
+        )
+    except requests.Timeout:
+        return None
+    if (req.status_code != 200):
+        return None
+    return req.html
 
 
 # Requisito 2
