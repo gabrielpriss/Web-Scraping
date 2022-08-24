@@ -27,6 +27,7 @@ def scrape_novidades(html_content):
     selector = Selector(text=html_content)
     for url in selector.css("a.cs-overlay-link").xpath('@href').getall():
         list.append(url)
+    return list
 
 
 # Requisito 3
