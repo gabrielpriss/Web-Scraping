@@ -1,5 +1,6 @@
 import time
 import requests
+from parsel import Selector
 
 
 # Requisito 1
@@ -22,6 +23,10 @@ def fetch(url):
 # Requisito 2
 def scrape_novidades(html_content):
     """Seu código deve vir aqui"""
+    list = []
+    selector = Selector(text=html_content)
+    for url in selector.css("a.cs-overlay-link").xpath('@href').getall():
+        list.append(url)
 
 
 # Requisito 3
