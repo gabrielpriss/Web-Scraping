@@ -51,9 +51,8 @@ def scrape_noticia(html_content):
     comments = selector.css("div#comments > h5::text").get() or 0
     summary = selector.css("div.entry-content").xpath('p/text()').get()
     category = selector.css("span.label::text").get()
-    tags = selector.css("section[class='post-tags'] ul li a::text").getall()
-    if (tags.len < 1):
-        tags = []
+    tags = selector.css(
+        "section[class='post-tags'] ul li a::text").getall() or []
     obj = {
         "url": url,
         "title": titulo,
