@@ -6,7 +6,6 @@ from tech_news.database import create_news
 
 # Requisito 1
 def fetch(url):
-    """Seu código deve vir aqui"""
     time.sleep(1)
     try:
         req = requests.get(
@@ -23,7 +22,6 @@ def fetch(url):
 
 # Requisito 2
 def scrape_novidades(html_content):
-    """Seu código deve vir aqui"""
     list = []
     selector = Selector(text=html_content)
     for url in selector.css("a.cs-overlay-link").xpath('@href').getall():
@@ -36,39 +34,36 @@ def scrape_next_page_link(html_content):
     selector = Selector(text=html_content)
     url = selector.css("a.next").xpath('@href').get()
     return (url)
-    """Seu código deve vir aqui"""
 
 
 # Requisito 4
 def scrape_noticia(html_content):
-    """Seu código deve vir aqui"""
-    selector = Selector(text=html_content)
-    timestamp = selector.css("li.meta-date::text").get()
-    titulo = selector.css("h1.entry-title::text").get()
-    writer = selector.css("a.n::text").get()
-    comments = selector.css("div#comments > h5::text").get() or 0
-    category = selector.css("span.label::text").get()
-    obj = {
-        "url": selector.css("link[rel='canonical']::attr(href)").get(),
-        "title": titulo,
+    selector = Selector(html_content)
+    url = selector.css('link[rel="canonical"]::attr(href)').get()
+    title = selector.css(".entry-title::text").get().strip()
+    timestamp = selector.css(".meta-date::text").get()
+    writer = selector.css(".author a::text").get()
+    comments_count = len(selector.css(".comment-body").getall())
+    summary = "".join(
+        selector.css(".entry-content > p:first-of-type ::text").getall()
+    ).strip()
+    tags = selector.css('.post-tags a[rel="tag"]::text').getall()
+    category = selector.css(".meta-category span.label::text").get()
+
+    return {
+        "url": url,
+        "title": title,
         "timestamp": timestamp,
         "writer": writer,
-        "comments_count": comments,
-        "summary": "".join(selector.css(
-            ".entry-content > p:first_of_type *::text").getall()
-        ).strip(),
-        "tags": (
-            selector.css("section[class='post-tags'] ul li a::text").getall()
-            or []
-         ),
-        "category": category
+        "comments_count": comments_count,
+        "summary": summary,
+        "tags": tags,
+        "category": category,
     }
-    return obj
 
 
 # Requisito 5
 def get_tech_news(amount):
-    """Seu código deve vir aqui"""
     news = []
     url = "https://blog.betrybe.com/"
     while len(news) < amount:
