@@ -23,11 +23,16 @@ def search_by_date(date):
     return [(new["title"], new["url"]) for new in news]
 
 
-# Requisito 8
+# Requisito 8 feito com ajuda/consulta ao rep. da Renata: https://github.com/
+# tryber/sd-016-b-tech-news/blob/6796ee4dcbb16729acfab4569cd532bb30633619/tech_news/analyzer/search_engine.py
 def search_by_tag(tag):
-    """Seu código deve vir aqui"""
+
+    news = search_news({"tags": {"$regex": tag, "$options": "i"}})
+    return [(new["title"], new["url"]) for new in news]
 
 
 # Requisito 9
 def search_by_category(category):
-    """Seu código deve vir aqui"""
+
+    news = search_news({"category": {"$regex": category, "$options": "i"}})
+    return [(new["title"], new["url"]) for new in news]
