@@ -97,7 +97,7 @@
   - Insere as notícias no banco, e retorna as mesmas.
 
 
-  ## 6 - Crie a função `search_by_title`
+  ## 6 - Função `search_by_title`
   local: `tech_news/analyzer/search_engine.py`
 
   Faz buscas por título.
@@ -120,7 +120,7 @@
   ## 7 - Função `search_by_date`
   local: `tech_news/analyzer/search_engine.py`
 
-  Buscar as notícias do banco de dados por data.
+  Busca as notícias do banco de dados por data.
 
   - Recebe como parâmetro uma data no formato ISO `AAAA-mm-dd`
   - Tem retorno no mesmo formato do requisito anterior.
@@ -132,7 +132,7 @@
 
   Busca as notícias por tag.
 
-  - Receber como parâmetro o nome da tag completo..
+  - Recebe como parâmetro o nome da tag completo..
   - A função deve ter retorno no mesmo formato do requisito anterior.
   - Caso nenhuma notícia seja encontrada, retorna uma lista vazia.
   - A busca é_case insensitive_
@@ -140,7 +140,7 @@
   ## 9 - Função `search_by_category`
   local: `tech_news/analyzer/search_engine.py`
 
-  Buscar as notícias por categoria.
+  Busca as notícias por categoria.
 
   - Recebe como parâmetro o nome da categoria completo.
   - Tem como retorno o mesmo formato do requisito anterior.
