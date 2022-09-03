@@ -12,12 +12,12 @@
 
   <strong>MongoDB</strong>
 
-  Foi utilizado um banco de dados chamado `tech_news`.
+  É utilizado um banco de dados chamado `tech_news`.
   As notícias são armazenadas em uma coleção chamada `news`.
 
-  Rodar MongoDB via Docker:
+  Para rodar o MongoDB via Docker:
   <code>docker-compose up -d mongodb</code> no terminal. 
-  Configurações do mongo com o docker no arquivo `docker-compose.yml`
+  Configurações do mongo com o docker estão no arquivo `docker-compose.yml`
 
   O mongoDB utilizará por padrão a porta 27017.
 
