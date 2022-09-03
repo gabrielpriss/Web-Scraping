@@ -5,15 +5,10 @@
 
   O projeto tem como principal objetivo fazer consultas em notícias sobre tecnologia.
 
-  As notícias são obtidas através da raspagem do [_blog da Trybe_](https://blog.betrybe.com).
-
-</details>
-
-
-<details>
-  <summary><strong> O Projeto</strong></summary>
-  As notícias raspadas estão no _Blog da Trybe_: https://blog.betrybe.com.
+  As notícias raspadas estão no Blog da Trybe: https://blog.betrybe.com.
   Essas notícias são salvas no banco de dados utilizando as funções python no módulo `database.py`
+  
+  ---
 
   <strong>MongoDB</strong>
 
