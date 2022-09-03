@@ -86,22 +86,6 @@
     - `tags` - lista contendo tags da notícia.
     - `category` - categoria da notícia.
 
-  - Exemplo de retorno da função:
-
-  ```json
-  {
-    "url": "https://blog.betrybe.com/novidades/noticia-bacana",
-    "title": "Notícia",
-    "timestamp": "04/04/2021",
-    "writer": "Eu",
-    "comments_count": 4,
-    "summary": "Algo muito bacana aconteceu",
-    "tags": ["Tecnologia", "Esportes"],
-    "category": "Ferramentas",
-  }
-    ```
-  ---
-
   ## 5 - Função `get_tech_news`
   local: `tech_news/scraper.py`
 
