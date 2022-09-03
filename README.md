@@ -12,7 +12,7 @@
 
 <details>
   <summary><strong> O Projeto</strong></summary>
-  As notícias a serem raspadas estão no _Blog da Trybe_: https://blog.betrybe.com.
+  As notícias raspadas estão no _Blog da Trybe_: https://blog.betrybe.com.
   Essas notícias são salvas no banco de dados utilizando as funções python no módulo `database.py`
 
   <strong>MongoDB</strong>
