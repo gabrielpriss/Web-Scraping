@@ -76,7 +76,7 @@
     - `timestamp` - data da notícia, no formato `dd/mm/AAAA`.
     - `writer` - nome da pessoa autora da notícia.
     - `comments_count` - número de comentários que a notícia recebeu.
-      - Se a informação não for encontrada, salve este atributo como `0` (zero)
+      - Se a informação não for encontrada, o atributo é salvo como `0` (zero)
     - `summary` - o primeiro parágrafo da notícia.
     - `tags` - lista contendo tags da notícia.
     - `category` - categoria da notícia.
@@ -86,7 +86,7 @@
 
   Aplicação de todas as funções anterioes.
 
-  - Receber como parâmetro um número inteiro `n` e buscar as últimas `n` notícias.
+  - Recebe como parâmetro um número inteiro `n` e buscar as últimas `n` notícias.
   - Funções `fetch`, `scrape_novidades`, `scrape_next_page_link` e `scrape_noticia` são utilizadas para buscar as notícias e processar o conteúdo.
   - As notícias buscadas são inseridas no MongoDB; utiliza as funções do diretório `tech_news/database.py`
   - Insere as notícias no banco, e retorna as mesmas.
